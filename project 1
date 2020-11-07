@@ -1,0 +1,46 @@
+# find all the natural number below 10 that are multiples of 3 or 5.
+#for  example,  10 have sum 3,5,6,9 which the multiples is 23.
+
+
+#Pre-thought
+#to solve the list of all natural number that are multiples of 3 or 5, I can use divide operator /.
+    #if the result is a nutrual number, then the sum of that multipler is 3 x a, similiarly, 5xa
+    # if not number -1 amd try again
+    # use sum() operation to calculate the sum of all numbers
+multiplesOf3=0
+multiplesOf5=0
+multiplesOf15=0
+sum=0
+def multiplesOf3and5(number):
+    number=number-1
+    if number <=0:
+        return ("False")
+    else:
+        sum3=0
+        sum5=0
+        sum15=0
+
+#calculate sums of 3
+        multiplesOf3=int(number/3) # determine how many multiples of 3
+        while(multiplesOf3>0):
+            sum3+=multiplesOf3*3
+            multiplesOf3-=1
+
+#calculate sums of3
+        multiplesOf5=int(number/5)
+        while(multiplesOf5>0):
+            sum5+=multiplesOf5*5
+            multiplesOf5-=1
+
+#subtract the least common multiplier which is 15 since it get counted twice
+        multiplesOf15=int(number/15) # determine how many multiples of 15
+        while(multiplesOf15>0):
+            sum15+=multiplesOf15*15
+            multiplesOf15-=1
+
+#final sum
+        print(sum3,sum5,sum15)
+        sum=sum5+sum3-sum15
+        print(sum)
+
+multiplesOf3and5(19564)
