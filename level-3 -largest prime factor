@@ -1,0 +1,28 @@
+# The prime factors of 13195 are 5, 7, 13 and 29.
+# What is the largest prime factor of the number 600851475143?
+
+# thoughts:
+# since there are not that much prime numbers exist, i can make a list of prime number  and go through them by for loop
+# if there are more than one prime number that divides the integer,
+# then simply put they in a list and find the max() of that list
+
+# thoughts2:
+# there are  too many prime numbers,,,
+# so i could use sqrt() to find the biggest possible divisor
+# then, if a number in range of 2 to sqrt() divides 600851475143, then test if it divides by 2 again and continue on.
+
+import sympy
+import math
+n = 600851475143
+check_num = int(math.sqrt(n))                                 # the biggest possible number is only smaller than sqrt(n)
+print(check_num)
+prime_lst = list(sympy.primerange(2, check_num + 1))          # list of prime number from 2 to that range through sympy
+print(prime_lst)
+
+result = []
+for i in prime_lst:                                           # if that prime number divides, then save in the list
+    if n % i == 0:
+        result.append(i)
+print(result[-1:])                                         # call for the largest in list
+
+
