@@ -1,0 +1,22 @@
+# A palindromic number reads the same both ways. The largest palindrome made
+# from the product of two 2-digit numbers is 9009 = 91 × 99.
+
+# Find the largest palindrome made from the product of two 3-digit numbers.
+
+
+# thoughts
+
+# i can check for the first digit and the last digit, if those aren't same, then next()
+# also in order to be palindromic number, the number of digits of the product must be even
+# the least 6  digits number is 100000 which is multiplied by two number that is bigger than 316
+# the biggest 6 digits number is 999999 which is multiplied by two number that is smaller than 1000
+
+
+palindromic_number = []
+for i in range(317, 1001):
+    for j in range(317, 1001):
+        total = i * j                                                       # find the number by multiplication
+        sum = (str(total))                                                  # change the number to str
+        if sum[0] == sum[5] and sum[1] == sum[4] and sum[2] == sum[3]:      # compare if the number is symmetric
+            palindromic_number.append(total)
+print(max(palindromic_number))
