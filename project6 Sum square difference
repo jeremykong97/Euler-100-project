@@ -1,0 +1,27 @@
+# The sum of the squares of the first ten natural numbers is, 385
+
+# The square of the sum of the first ten natural numbers is, 3025
+
+# Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is . 2640
+
+# Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+
+# sum square difference
+
+# thoughts 
+# i would just go brute force since the computer could calculate that 
+# first by finding the sum of the saquare from 11 to 100
+# then find the square of the sum from 11 to 100 
+# subtract them and add by 2640
+
+sum_square = 0
+square_sum = 0
+sum = 0
+for i in range(0, 101):
+    sum_square += i*i                       # calculate sum of squre
+    sum += i
+square_sum = sum * sum                      # calculate square of sum
+total = sum_square - square_sum
+print(total)
+
+# hence the difference is 25164150
